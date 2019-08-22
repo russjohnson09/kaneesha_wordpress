@@ -7,7 +7,15 @@ wordpress setup for kaneesha's blog
 
 
 ##php
-apt-get install php-fpm php php-mysql nano iputils-ping -y
+apt-get install php-fpm php php-mysql nano iputils-ping
+
+##mail
+apt-get install postfix
+
+internet site
+
+
+
 
 #Setup
 ssh-keygen
