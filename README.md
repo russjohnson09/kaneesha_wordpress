@@ -11,11 +11,25 @@ apt-get install php-fpm php php-mysql nano iputils-ping
 
 
 ##php-fpm
+https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-ubuntu-18-04
+
 service php7.2-fpm restart
 nano /etc/php/7.2/fpm/php-fpm.conf 
 
 pid = /run/php/php7.2-fpm.pid
 
+
+https://serverfault.com/questions/777994/permission-denied-for-fastcgi-pass-using-php7
+
+###skip? follow above digital ocean
+nano /etc/php/7.2/fpm/pool.d/www.conf 
+
+;listen.owner = nginx
+listen.owner = www-data
+listen.group = nginx
+listen.mode = 0660
+
+service php7.2-fpm restart
 
 ##mail
 apt-get install postfix
