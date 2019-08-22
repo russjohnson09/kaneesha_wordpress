@@ -9,13 +9,29 @@ wordpress setup for kaneesha's blog
 ##php
 apt-get install php-fpm php php-mysql nano iputils-ping
 
+
+##php-fpm
+service php7.2-fpm restart
+nano /etc/php/7.2/fpm/php-fpm.conf 
+
+pid = /run/php/php7.2-fpm.pid
+
+
 ##mail
 apt-get install postfix
 
 internet site
 
 
+##certbot
+cd ~
+wget https://dl.eff.org/certbot-auto
+sudo mv certbot-auto /usr/local/bin/certbot-auto
+sudo chown root /usr/local/bin/certbot-auto
+chmod 0755 /usr/local/bin/certbot-auto
+/usr/local/bin/certbot-auto --help
 
+certbot-auto --help
 
 #Setup
 ssh-keygen
